@@ -1,0 +1,189 @@
+html {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  color: $text-color;
+}
+
+* {
+  outline: 2px solid tomato;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: auto;
+  outline: 1px solid greenyellow;
+
+  &.us {
+    background: #f5f4fa;
+    padding-bottom: 94px;
+  }
+
+  &.btns {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include for-size(tablet-portrait) {
+    width: 480px;
+  }
+
+  @include for-size(tablet-landscape) {
+    width: 768px;
+  }
+
+  @include for-size(desktop) {
+    width: 1200px;
+  }
+}
+
+.container.we-do {
+  display: none;
+
+  @include for-size(tablet-landscape) {
+    display: none;
+  }
+
+  @include for-size(desktop) {
+    display: grid;
+  }
+}
+
+.list {
+  list-style: none;
+  text-decoration: none;
+  padding: 0px;
+
+  @include for-size(tablet-landscape) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include for-size(desktop) {
+    display: flex;
+    margin: 0px;
+  }
+
+  & .list-link-current {
+    position: relative;
+    display: inline-flex;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    color: $accent-color;
+    text-decoration: none;
+
+    @include for-size(tablet-portrait) {
+      justify-content: center;
+    }
+
+    @include for-size(tablet-landscape) {
+      position: relative;
+    }
+  }
+}
+
+.list-link-current::after {
+  position: absolute;
+  display: inline-flex;
+  left: 0;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 4px;
+  background: $accent-color;
+  border-radius: 2px;
+}
+
+.list-link {
+  display: inline-flex;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: $heading-color;
+
+  &:hover,
+  &:focus {
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    color: $accent-color;
+  }
+
+  @include for-size(tablet-portrait) {
+    justify-content: center;
+  }
+
+  @include for-size(tablet-landscape) {
+    justify-content: space-between;
+  }
+}
+
+.list-item {
+  margin: 0px;
+
+  @include for-size(tablet-landscape) {
+    margin-right: 50px;
+  }
+
+  &:last-child {
+    margin-right: 0px;
+  }
+}
+
+.list-contacts {
+  margin: 0px;
+
+  // @include for-size(desktop) {
+  //   margin-left: 30px;
+  // }
+}
+
+.list.clients {
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 94px;
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include for-size(tablet-landscape) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include for-size(desktop) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.list.menu {
+  @include for-size(tablet-landscape) {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+}
+
+.list.auth-nav {
+  @include for-size(tablet-landscape) {
+    display: block;
+    justify-content: left;
+  }
+
+  @include for-size(desktop) {
+    display: flex;
+  }
+}

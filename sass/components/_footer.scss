@@ -1,0 +1,88 @@
+%font-details {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+}
+
+footer {
+  background: #2f303a;
+}
+
+.footer-nav {
+  @include for-size(desktop) {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+  }
+}
+
+.footer-tablet {
+  padding-top: 65px;
+
+  @include for-size(tablet-landscape) {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+  }
+}
+
+.adress {
+  @extend %font-details;
+  // flex-wrap: wrap;
+
+  font-style: normal;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: $white-text-color;
+  margin-bottom: 60px;
+
+  @include for-size(desktop) {
+    margin-right: 70px;
+    width: 231px;
+  }
+}
+.to-reach {
+  @extend %font-details;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.mail-us {
+  @include for-size(desktop) {
+    display: block;
+    margin-left: 93px;
+  }
+}
+
+.footer-form {
+  max-width: 450px;
+  width: 100%;
+  height: 50px;
+  padding-left: 16px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  @include for-size(tablet-landscape) {
+    max-width: 450px;
+    margin-left: 166px;
+  }
+
+  @include for-size(desktop) {
+    position: absolute;
+    width: 358px;
+    margin-left: 0px;
+  }
+}
+
+.mail-us.footer-form::placeholder {
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}

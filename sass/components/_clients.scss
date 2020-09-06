@@ -1,0 +1,50 @@
+.clients {
+  margin-top: 0px;
+  border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-bottom: 30px;
+
+  &:nth-child(n + 5) {
+    margin-bottom: 0px;
+  }
+
+  @include for-size(tablet-landscape) {
+    &:nth-child(n + 4) {
+      margin-bottom: 0px;
+    }
+  }
+
+  @include for-size(desktop) {
+    margin-bottom: 0px;
+  }
+
+  &:hover {
+    border-color: $accent-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 210px;
+  height: 90px;
+  fill: #afb1b8;
+
+  @include for-size(tablet-landscape) {
+    width: 226px;
+  }
+
+  @include for-size(desktop) {
+    width: 170px;
+  }
+
+  &:hover {
+    fill: $accent-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}

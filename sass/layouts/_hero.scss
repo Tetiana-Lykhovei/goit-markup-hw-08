@@ -1,0 +1,74 @@
+%hero-size {
+  width: 480px;
+  height: 400px;
+}
+
+.container-hero {
+  @extend %hero-size;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+
+  @include for-size(tablet-landscape) {
+    width: 768px;
+  }
+
+  @include for-size(desktop) {
+    width: 1200px;
+    height: 600px;
+  }
+}
+
+.hero-heading {
+  padding-top: 200px;
+  margin-top: 0px;
+  /* margin-bottom: 30px; */
+  /* outline: 1px solid greenyellow; */
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 42px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $white-text-color;
+
+  @include for-size(desktop) {
+    font-size: 44px;
+    line-height: 60px;
+  }
+}
+
+.hero-section {
+  @extend %hero-size;
+  background-color: #c4c4c4;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/mobile/hero.jpg);
+  background-size: 480px 400px;
+  background-repeat: no-repeat;
+  text-align: center;
+
+  @include for-size(tablet-landscape) {
+    width: 768px;
+    background-image: url(../images/tablet/hero.jpg);
+    background-size: 768px 400px;
+  }
+
+  @include for-size(desktop) {
+    width: 1200px;
+    height: 600px;
+
+    background-image: url(../images/desktop/hero.jpg);
+    background-size: 1200px 600px;
+  }
+}
+
+.overlay {
+  position: relative;
+  overflow: hidden;
+  width: 370px;
+  height: 294px;
+}

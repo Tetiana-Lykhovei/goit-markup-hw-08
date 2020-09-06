@@ -1,0 +1,56 @@
+.benefits {
+  margin-top: 60px;
+
+  @include for-size(tablet-landscape) {
+    margin-top: 60px;
+  }
+
+  @include for-size(desktop) {
+    margin-top: 94px;
+  }
+}
+
+.benefits-list {
+  @include for-size(tablet-landscape) {
+    width: 354px;
+    // margin-right: 30px;
+
+    &:nth-child(2n + 1) {
+      margin-right: 30px;
+    }
+  }
+
+  @include for-size(desktop) {
+    width: calc((1200px - 90px) / 4);
+    margin-right: 30px;
+  }
+
+  margin-bottom: 30px;
+
+  &:nth-child(4n) {
+    margin-right: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+.thumbs {
+  background-color: #f5f4fa;
+  margin-bottom: 30px;
+  margin-right: 0px;
+  border-radius: 4px;
+
+  &-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #f5f4fa;
+    padding: 25px 190px;
+
+    @include for-size(tablet-landscape) {
+      padding: 25px 142px;
+    }
+
+    @include for-size(desktop) {
+      padding: 25px 100px;
+    }
+  }
+}

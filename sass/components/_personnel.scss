@@ -1,0 +1,51 @@
+%person-card {
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.people {
+  margin-right: 30px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  background-color: $white-text-color;
+
+  &:nth-child(4n) {
+    margin-right: 0px;
+  }
+
+  @include for-size(tablet-portrait) {
+    &:nth-child(-n + 2) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.people-img {
+  @include for-size(tablet-portrait) {
+    display: block;
+    width: 450px;
+  }
+
+  @include for-size(tablet-landscape) {
+    display: block;
+    width: 354px;
+  }
+
+  @include for-size(desktop) {
+    display: block;
+    width: 270px;
+  }
+}
+
+.names {
+  @extend %person-card;
+  font-weight: 500;
+  color: $heading-color;
+}
+.positions {
+  @extend %person-card;
+  font-weight: 400;
+}

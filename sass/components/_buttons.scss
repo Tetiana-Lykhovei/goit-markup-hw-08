@@ -1,0 +1,117 @@
+%act-btns {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: $white-text-color;
+  background: $accent-color;
+  border-radius: 4px;
+}
+
+.menu-button {
+  display: inline-flex;
+  margin-left: auto;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  background-color: transparent;
+
+  & .icon-cross {
+    display: none;
+  }
+
+  &.is-open .icon-cross {
+    display: block;
+  }
+
+  &.is-open .icon-menu {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.menu-button.is-open:hover ~ .icon-cross,
+.icon-menu {
+  fill: $accent-color;
+}
+
+.act-btn {
+  @extend %act-btns;
+  padding: 10px 32px;
+  margin-bottom: 200px;
+  border-color: $accent-color;
+
+  &-foot {
+    @extend %act-btns;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 140px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+    @include for-size(tablet-landscape) {
+      margin-left: 291px;
+    }
+
+    @include for-size(desktop) {
+      position: absolute;
+      display: flex;
+      padding-left: 29px;
+      transform: translateX(380px);
+      margin-left: 12px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.btn-close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 8px;
+  right: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  &:hover > &-icon path {
+    fill: $accent-color;
+  }
+}
+
+.btn-submit {
+  position: absolute;
+  justify-content: center;
+  margin-top: 30px;
+  margin-left: 125px;
+  width: 200px;
+  height: 50px;
+  background: $accent-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-color: $accent-color;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  align-items: center;
+  letter-spacing: 0.06em;
+  color: $white-text-color;
+  outline: none;
+
+  @include for-size(desktop) {
+    margin-left: 164px;
+  }
+}
+
+.form-svg {
+  margin-right: 28px;
+  margin-left: 10px;
+  align-self: baseline;
+}
